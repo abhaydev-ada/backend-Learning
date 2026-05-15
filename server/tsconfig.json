@@ -1,0 +1,58 @@
+{
+  "compilerOptions": {
+    /* ──────────────────────────────────────────────
+     * WHAT THESE OPTIONS MEAN (Learning Notes):
+     *
+     * target: "ES2020"       → Compile to modern JavaScript (supports async/await natively)
+     * module: "commonjs"     → Use require/module.exports (Node.js standard)
+     * strict: true           → Enable ALL strict type checks (catches more bugs)
+     * esModuleInterop: true  → Allows `import express from 'express'` syntax
+     * outDir: "./dist"       → Compiled JS goes to dist/ folder
+     * rootDir: "./src"       → Source code lives in src/ folder
+     * paths: {...}           → Import aliases so you can write @domain/... instead of ../../../domain/...
+     * ────────────────────────────────────────────── */
+
+    "target": "ES2020",
+    "module": "commonjs",
+    "lib": ["ES2020"],
+    "ignoreDeprecations": "6.0",
+    "outDir": "./dist",
+    "rootDir": "./src",
+
+    /* Strict Type Checking — catches bugs at compile time */
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+
+    /* Module Resolution */
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+
+    /* Source Maps — helps with debugging */
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+
+    /* Path Aliases — so you don't write ../../../domain/...
+     * Instead you write: @domain/entities/User
+     * Much cleaner and easier to read! */
+    "baseUrl": "./src",
+    "paths": {
+      "@domain/*": ["domain/*"],
+      "@application/*": ["application/*"],
+      "@infrastructure/*": ["infrastructure/*"],
+      "@presentation/*": ["presentation/*"],
+      "@shared/*": ["shared/*"],
+      "@main/*": ["main/*"]
+    },
+
+    "skipLibCheck": true
+  },
+  "include": ["src/**/*", "tests/**/*"],
+  "exclude": ["node_modules", "dist", "client"]
+}

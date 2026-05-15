@@ -1,0 +1,13 @@
+{
+  "name": "mern-todo-clean-architecture",
+  "version": "1.0.0",
+  "description": "MERN Todo App with Clean Architecture — server + client",
+  "scripts": {
+    "dev:server": "cd server && npm run dev",
+    "dev:client": "cd client && npm run dev",
+    "install:all": "cd server && npm install && cd ../client && npm install",
+    "seed": "cd server && npm run seed"
+  },
+  "keywords": ["mern", "todo", "clean-architecture"],
+  "license": "ISC"
+}
